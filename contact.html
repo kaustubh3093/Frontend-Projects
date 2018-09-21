@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta charset="utf-8"/>
+<meta charset="utf-8" />
+<meta content="Simple example of HTML5 structure"
+	keywords="HTML5,Stucture" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+<title>HTML Page Structure</title>
+<link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+<link rel="shortcut icon" href="university.ico" />
+<link rel="Stylesheet" type="text/css" href="Rock1.css" />
+<link rel="Stylesheet" type="text/css" href="Rock2.css" />
+<script async defer src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+function store(){
+	if(window.localStorage.name)
+      {
+		var value = localStorage.getItem("name");
+		$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+      }
+    else
+      {
+		var inputName= document.getElementById("Firstname");
+        window.localStorage.setItem("name",inputName.value);
+		store();
+      }
+	}
+	
+	function display(){
+		if(window.localStorage.name){
+		if(window.localStorage.name!=null){
+			var value = localStorage.getItem("name");
+			$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+		}
+		else{
+		return false;
+		}
+		}
+		else{
+		return false;
+		}
+	}
+$(document).ready(display);
+
+	function initMap() {
+        var myLatLng = {lat: 42.2791828, lng: -89.0292755};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+</script>
+    </head>
+    <body onload="initMap()">
+        <div id="pagewrap">
+
+		<header id="header">
+
+			<hgroup>
+				<h1 id="site-logo">Education For Everyone Everywhere</h1>
+				
+			</hgroup>
+			<hgroup>
+				<h1 id="local-storage"></h1>
+				
+			</hgroup>
+
+			<nav>
+				<ul id="main-nav" class="clearfix">
+					<li><div><a href="index.html">Home</a></div></li>
+					<li><div class="div10"><a href="horizonnews.html">Newsletter</a></div></li>
+					<li><div class="div10"><a href="program.html">Programs</a></div></li>
+					<li><div><a href="faculty.html">Faculty</a></div></li>
+					<li><div class="div10"><a href="Registration.html">admission</a></div></li>
+					<li><div class="div10"><a href="#">Contactus</a></div></li>
+				</ul>
+			</nav>
+
+		</header>
+		
+		<br>
+		
+		<div id="content">
+			<div id="center" style="z-index:100">
+				<article id="post">
+					<p class="pabout" id="map" style="float:center;width:100%;height:600px;background-color:grey;border-radius:5px"></p>
+				</article>
+			</div>
+		</div>
+		<aside id="sidebar">
+			<section class="widget7">
+				<h1 class="widgettitle">Contact us</h1> 
+				<p> You can contact us in a number of ways.</p>
+				<h4> Contact us about your courses </h4>
+				<a href="#">Undergraduate course</a><br>
+						<a href="#">Graduate course</a> <br> 
+						<a href="#">Postgraduate course </a>
+						<h4> Download our prospectus </h4>
+				<a href="#">Undergraduate course</a><br>
+						<a href="#">Graduate course</a> <br> 
+						<h4>International enquiries </h4>
+						<p>For questions from current or prospective international students visit our section internation development team</p>
+				<a href="#">International Development Team</a><br>
+				<h4> Postal Address </h4>
+				<p>5050 E <br>State St louis <br> Rockford University <br> IL 61108</p>
+					<h4> Telephone </h4>
+				<p> +44 (0) 161 306 6000</p>
+				<p> +44 (0) 161 306 6001</p>
+			</section>
+		</aside>
+		
+		<div>
+		</body>
+		</html>
+		
+		

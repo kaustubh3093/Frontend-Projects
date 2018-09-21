@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rockford University</title>
+<link rel="Stylesheet" type="text/css" href="Rock1.css" />
+<link rel="Stylesheet" type="text/css" href="Rock2.css" />
+<link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+function store(){
+	if(window.localStorage.name)
+      {
+		var value = localStorage.getItem("name");
+		$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+      }
+    else
+      {
+		var inputName= document.getElementById("Firstname");
+        window.localStorage.setItem("name",inputName.value);
+		store();
+      }
+	}
+	
+	function display(){
+		if(window.localStorage.name){
+		if(window.localStorage.name!=null){
+			var value = localStorage.getItem("name");
+			$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+		}
+		else{
+		return false;
+		}
+		}
+		else{
+		return false;
+		}
+	}
+$(document).ready(display);
+</script>
+ <script>
+   function buildCanvas()
+   {
+   
+convertCurrency();
+       
+       
+    var canvas = document.getElementById("can1");
+    if (canvas.getContext)
+    {
+      var ctx = canvas.getContext("2d");
+      var nature = new Image();
+      
+        var course1 = new Image();
+        var course2 = new Image();
+        var course3 = new Image();
+        var course4 = new Image();
+        nature.src = "course1.jpg";
+        course1.src = "course2.jpg";
+        course2.src = "course3.jpg";
+        course3.src = "course4.jpg";
+        course4.src = "course5.jpg";
+        nature.onload = function(){
+            ctx.drawImage(nature,0,0,250,150);            
+            ctx.font = "20px New Times Roman";
+            ctx.fillText("Angular Java",270,50);
+			 ctx.font = "18px New Times Roman"
+			 ctx.fillText("Script",270,80);
+			  ctx.font = "16px New Times Roman";
+			  ctx.fillText("Course Duration: 1 Months",270,110);
+            
+            ctx.drawImage(course1,0,200,250,150);
+            ctx.font = "20px New Times Roman";
+            ctx.fillText("Advance Engineering ",270,250);
+			 ctx.font = "18px New Times Roman"
+             ctx.fillText("Graphic",270,280);
+			  ctx.font = "16px New Times Roman";
+			  ctx.fillText("Course Duration: 2 Months",270,310);
+			 
+            ctx.drawImage(course2,0,400,250,150);
+            ctx.font = "20px New Times Roman";
+            ctx.fillText("Numerical Mathematics",270,450); 
+			 ctx.font = "18px New Times Roman"
+			ctx.fillText("and Analytic",270,480);
+			 ctx.font = "16px New Times Roman";
+			  ctx.fillText("Course Duration: 2.5 Months",270,510);
+            
+            ctx.drawImage(course3,0,600,250,150);
+            ctx.font = "20px New Times Roman";
+            ctx.fillText("Core Java and ",270,650);
+			 ctx.font = "18px New Times Roman"
+			ctx.fillText("Advanced Java ",270,680);
+			 ctx.font = "16px New Times Roman";
+			  ctx.fillText("Course Duration: 6 Months",270,710);
+			
+            
+            ctx.drawImage(course4,0,800,250,150);}
+            ctx.font = "20px New Times Roman";
+            ctx.fillText("Electrical drives",270,850);
+			 ctx.font = "18px New Times Roman"
+			ctx.fillText("And Motors",270,880);
+			 ctx.font = "16px New Times Roman";
+			  ctx.fillText("Course Duration: 3 Months",270,910);
+
+    }
+   }
+
+        function workerMsg(e)
+ {
+   $("#fee1").empty().append(e.data[0]); 
+   $("#fee2").empty().append(e.data[1]); 
+   $("#fee3").empty().append(e.data[2]);
+   $("#fee4").empty().append(e.data[3]);
+   $("#fee5").empty().append(e.data[4]);
+ }
+ 
+ function convertCurrency(){
+ 
+ if(typeof(Worker) != "undefined")
+    {
+      document.getElementById("support").innerHTML = "Great! This browser supports Web Workers";
+      myworker = new Worker("currConProject.js");
+	  
+	  myworker.postMessage($("#crrId1").val());
+	  
+      myworker.addEventListener("message",workerMsg,true);
+      
+    }
+    else
+    {
+      document.getElementById("support").innerHTML = "Oops! This browser does not support Web Workers";
+    }
+       
+ 
+ }
+
+ </script>
+</head>
+<body onload="buildCanvas()">
+	
+	
+	<div id="pagewrap">
+
+		<header id="header">
+
+			<hgroup>
+				<h1 id="site-logo">Education For Everyone Everywhere</h1>
+				
+			</hgroup>
+<hgroup>
+				<h1 id="local-storage"></h1>
+				
+			</hgroup>
+			<nav id="nav1">
+				<ul id="main-nav" class="clearfix">
+					<li><div><a href="index.html">Home</a></div></li>
+					<li><div class="div10"><a href="horizonnews.html">Newsletter</a></div></li>
+					<li><div class="div10"><a href="#">Programs</a></div></li>
+					<li><div><a href="faculty.html">Faculty</a></div></li>
+					<li><div class="div10"><a href="Registration.html">admission</a></div></li>
+					<li><div class="div10"><a href="contact.html">Contactus</a></div></li>
+				</ul>
+			</nav>
+
+			 
+
+		</header>
+		<br> <br>
+		<div style="background-color:#fffff0; height:1080px; width:1000px; margin:0 auto; padding-left:30px; padding-top:20px;border-radius:10px;">
+		<h1>CAMPUS COURSES</h1>
+    
+    <div id="support"></div><br>    
+    <div id="divInfo"></div>
+    
+<div style="float:right; margin-right:20%;" id="courseFee">Courses fees
+    <select value="currencySelected" id="crrId1" onclick="convertCurrency()">
+        <option value="Rupees">Rupees</option>
+        <option value="USD">USD</option>
+        <option value="Yuan">Chinese yuan</option>
+        <option value="Pound">Pound</option>
+    </select>
+    <p style="margin-top:50px;" id="fee1">Rs 5000</p>
+    <p style="margin-top:150px;" id="fee2">Rs 9000</p>
+    <p style="margin-top:170px;" id="fee3">Rs 7000</p>
+    <p style="margin-top:200px;" id="fee4">Rs 10000</p>
+    <p style="margin-top:170px;" id="fee5">Rs 15000</p>
+</div>
+<canvas id="can1" width="530" height="1200" style="float:left; z-index:10000;">
+<b>Your browser does not support canvas</b>
+</canvas>
+		</div>
+		</div>
+		</body>
+		</html>

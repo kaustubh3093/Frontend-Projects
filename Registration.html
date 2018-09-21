@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rockford University</title>
+<link rel="Stylesheet" type="text/css" href="Rock1.css" />
+<link rel="Stylesheet" type="text/css" href="Rock2.css" />
+<link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+function store(){
+	if(window.localStorage.name)
+      {
+		var value = localStorage.getItem("name");
+		$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+      }
+    else
+      {
+		var inputName= document.getElementById("Firstname");
+        window.localStorage.setItem("name",inputName.value);
+		store();
+      }
+	}
+	
+	function display(){
+		if(window.localStorage.name){
+		if(window.localStorage.name!=null){
+			var value = localStorage.getItem("name");
+			$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+		}
+		else{
+		return false;
+		}
+		}
+		else{
+		return false;
+		}
+	}
+$(document).ready(display);
+</script>
+    </head>
+    <body>
+        <div id="pagewrap">
+
+		<header id="header">
+
+			<hgroup>
+				<h1 id="site-logo">Education For Everyone Everywhere</h1>
+				
+			</hgroup>
+			<hgroup>
+				<h1 id="local-storage"></h1>
+				
+			</hgroup>
+			
+
+			<nav>
+				<ul id="main-nav" class="clearfix">
+					<li><div><a href="index.html">Home</a></div></li>
+					<li><div class="div10"><a href="horizonnews.html">Newsletter</a></div></li>
+					<li><div class="div10"><a href="program.html">Programs</a></div></li>
+					<li><div><a href="faculty.html">Faculty</a></div></li>
+					<li><div class="div10"><a href="#">admission</a></div></li>
+					<li><div class="div10"><a href="contact.html">Contactus</a></div></li>
+				</ul>
+			</nav>
+
+		</header>
+		<br> <br>
+		<div style="background-color:#fffff0; height:625px; width:600px; margin:0 auto; padding-left:30px; padding-top:20px;border-radius:10px;"><center>
+<form id="form1"> 
+<h1 style="color:#000"> Registration Form </h1>
+<label for="Term" style="font-size:14pt;" >Term: </label> 
+<input type="radio" name="Term" value="Term"> Spring </input>
+<input type="radio" name="Term" value="Term"> Summer </input>
+<Input type="radio" name="Term" value="Term"> Fall </input> &nbsp; &nbsp;
+
+
+<label for="Term" style="font-size:14pt;" >Degree: </label> 
+<input type="radio" name="Degree" value="Degree"> Undergraduate </input>
+<input type="radio" name="Degree" value="Degree"> Graduate </input> <br>
+
+
+<input type="text" id="Firstname" name="username" placeholder="First Name" required title="Please enter your valid #First name as mentioned on your Passport" size="24"  style="height:32px;font-size:14pt;"/> &nbsp; &nbsp;
+<input type="text" id="Lastname" name="username" placeholder="Last Name" required title="Please enter your valid #Last name" size="22" style="height:32px;font-size:14pt;"/><br/><br>
+<input type="password" name="password" id="password" placeholder="Enter your password" title="choose your password" required size="53" style="height:32px;font-size:14pt;"/>
+<br><br>
+<input type="email" id="useremail" name="useremail" placeholder="Enter email-id" required size="53" style="height:32px;font-size:14pt;"/><br/><br>
+<input type="text" id="number" name="number" placeholder="Enter your phone number" required size="53" style="height:32px;font-size:14pt;"/><br/><br>
+<h2 style="color:#000"> Birthday </h2> 
+<input type="date" id="dateInput" name="dateInput" required /><br/><br>
+<select name="sel" id="s" required>
+<option value=0>--Select--</option>
+<option value=1>Campus</option>
+<option value=2>Online<option>
+</select>
+<br>
+<select name="sel" id="s" required>
+<option value=0>--Select Your Course--</option>
+<option value=1>Angular JS</option>
+<option value=2>Advance Engg Graphics</option>
+<option value=3>Numerical Analysis</option>
+<option value=4>Core Java and j2EE</option>
+<option value=5>Engineering drives</option>
+</select><br><br>
+
+<label for="gender" style="font-size:14pt;" >Male </label>
+ <input type="radio" name="gender" value="male">  </input>
+ <label for="gender" style="font-size:14pt;" >Female </label>
+  <input type="radio" name="gender" value="female"> </input>
+ 
+<h4  style="color:#ff0000">By clicking Register, you agree to our <br>Terms and that you have read our Data Policy. </h4> 
+<input type="submit" name="Register" value="Register" onclick="store()" style="height:32px"> 
+</form>
+</center></div>
+		
+</div>
+</body>
+</html>

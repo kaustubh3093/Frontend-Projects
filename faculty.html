@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rockford University</title>
+<link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+<link rel="Stylesheet" type="text/css" href="Rock1.css" />
+<link rel="Stylesheet" type="text/css" href="Rock2.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+function store(){
+	if(window.localStorage.name)
+      {
+		var value = localStorage.getItem("name");
+		$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+      }
+    else
+      {
+		var inputName= document.getElementById("Firstname");
+        window.localStorage.setItem("name",inputName.value);
+		store();
+      }
+	}
+	
+	function display(){
+		if(window.localStorage.name){
+		if(window.localStorage.name!=null){
+			var value = localStorage.getItem("name");
+			$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+		}
+		else{
+		return false;
+		}
+		}
+		else{
+		return false;
+		}
+	}
+$(document).ready(display);
+</script>
+
+<script>
+$(document).ready(function(){
+$("#img1").click(function(){
+     $("#kk").empty();
+   $("#kk").append('<img  src="prof1.jpg" style="height:350px; width:350px;"/img> <div style="float:right; margin-right:30%;"> <h1 style="color:#fff;">John Kennedy </h1> <br> <p>Chair, Associate Professor, Spanish' +
+'<br>B.A., University of Maine<br>M.A., University of Wisconsin-Madison'+
+'<br>Ph.D., University of Wisconsin-Madison<br>Phone: 815-226-4099<br>E-mail: JBurns@rockford.edu </p> </div>');
+    });
+	$("#img2").click(function(){
+     $("#kk").empty();
+   $("#kk").append('<img  src="prof3.jpg" style="height:350px; width:350px;"/img> <div style="float:right; margin-right:30%;"> <h1 style="color:#fff;">Donald Martin </h1> <br> '+
+   '<p>Professor of Modern and Classical‌<br>B.A., University of Illinois<br>M.A., University of Cincinnati<br>Ph.D., University of Cincinnati'+
+ '<br>Phone: 815-226-4027<br>Fax: 815-394-5171<br>E-mail: DMartin@rockford.edu </p> </div>');
+    });
+	$("#img3").click(function(){
+     $("#kk").empty();
+   $("#kk").append('<img  src="prof4.jpg" style="height:350px; width:350px;"/img> <div style="float:right; margin-right:30%;"> <h1 style="color:#fff;">Martin Luthor</h1> <br>'+
+   '<p>Associate Professor of Modern bbc<br>B.A., The College of the City of NewYork<br>M.A., Vanderbilt University<br>Ph.D., Vanderbilt University<br>Phone: 815-226-4049'+
+'<br>E-mail: SQuinn@rockford.edu </p> </div>');
+    });
+	$("#img4").click(function(){
+     $("#kk").empty();
+   $("#kk").append('<img  src="prof2.jpg" style="height:350px; width:350px;"/img> <div style="float:right; margin-right:30%;"> <h1 style="color:#fff;">Sharon Bartlett </h1> <br> '+
+   '<p>Assistant Professor of French ca<br>B.A., University of Wisconsin-River Falls<br>M.A., University of Northern Iowa<br>Ph.D., University of Iowa'+ 
+'<br>Phone: 815-394-4289<br>E-mail: Sbartlett@rockford.edu </p> </div>');
+    });
+});
+
+
+</script>
+
+    </head>
+    <body>
+        <div id="pagewrap" >
+
+		<header id="header">
+
+			<hgroup>
+				<h1 id="site-logo">Education For Everyone Everywhere</h1>
+				
+			</hgroup>
+			<hgroup>
+				<h1 id="local-storage"></h1>
+				
+			</hgroup>
+
+			<nav>
+				<ul id="main-nav" class="clearfix">
+					<li><div><a href="index.html">Home</a></div></li>
+					<li><div class="div10"><a href="horizonnews.html">Newsletter</a></div></li>
+					<li><div class="div10"><a href="program.html">Programs</a></div></li>
+					<li><div><a href="#">Faculty</a></div></li>
+					<li><div class="div10"><a href="Registration.html">admission</a></div></li>
+					<li><div class="div10"><a href="contact.html">Contactus</a></div></li>
+				</ul>
+			</nav>
+
+		</header> <br>
+		<!--style="background-color:#fff; height:625px; width: 920px" -->
+		<div >
+		 <p>Few Prominent professor of the University are:</p>
+        <div id="k">
+        <img id="img1" src="prof1.jpg" style="cursor:pointer" height="20px" width="200px"/img> &nbsp; &nbsp;
+			
+        <img id="img2" src="prof3.jpg" style="cursor:pointer" height="20px" width="200px"  /> &nbsp; &nbsp
+        <img  id="img3"src="prof4.jpg" style="cursor:pointer" height="20px" width="200px" /> &nbsp; &nbsp
+        <img id="img4" src="prof2.jpg" style="cursor:pointer" height="20px" width="200px"/>
+       
+		</div>
+		
+		<br>
+		<div id="kk">
+		</div>
+		</div>
+		</div>
+		</body>
+		</html>

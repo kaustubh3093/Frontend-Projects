@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rockford University</title>
+<link rel="Stylesheet" type="text/css" href="Rock1.css" />
+<link rel="Stylesheet" type="text/css" href="Rock2.css" />
+<link rel="icon" href="icon.png" type="image/gif" sizes="16x16">
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+function store(){
+	if(window.localStorage.name)
+      {
+		var value = localStorage.getItem("name");
+		$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+      }
+    else
+      {
+		var inputName= document.getElementById("Firstname");
+        window.localStorage.setItem("name",inputName.value);
+		store();
+      }
+	}
+	
+	function display(){
+		if(window.localStorage.name){
+		if(window.localStorage.name!=null){
+			var value = localStorage.getItem("name");
+			$("#local-storage").append("<pre>Welcome "+value+"</pre>");
+		}
+		else{
+		return false;
+		}
+		}
+		else{
+		return false;
+		}
+	}
+$(document).ready(display);
+</script>
+
+<script>
+
+function begin() {
+		$("#image").attr("src","");
+	
+		var images = new Array("img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg","img7.jpg");		
+		$.each(images,function(index, value) {
+			$("#image")
+			.fadeOut(1500, function() {
+				$("#image").attr("src",value);
+				$("#image").attr("width",900);
+				$("#image").attr("height",100);
+			}).fadeIn(1500).delay(1500);
+
+		});
+		begin();
+	}
+
+</script>
+</head>
+<body onload="begin()">
+	
+	
+	<div id="pagewrap">
+
+		<header id="header">
+
+			<hgroup>
+				<h1 id="site-logo">Education For Everyone Everywhere</h1>
+				
+			</hgroup>
+<hgroup>
+				<h1 id="local-storage"></h1>
+				
+			</hgroup>
+			<nav id="nav1">
+				<ul id="main-nav" class="clearfix">
+					<li><div><a href="#">Home</a></div></li>
+					<li><div class="div10"><a href="horizonnews.html">Newsletter</a></div></li>
+					<li><div class="div10"><a href="program.html">Programs</a></div></li>
+					<li><div><a href="faculty.html">Faculty</a></div></li>
+					<li><div class="div10"><a href="Registration.html">admission</a></div></li>
+					<li><div class="div10"><a href="contact.html">Contactus</a></div></li>
+				</ul>
+			</nav>
+
+			 
+
+		</header>
+		<br>
+		<div style="background-color:#fffff0; height:895px; width:980px; margin:0 auto; padding-left:10px; padding-top:10px;border-radius:10px;">
+       
+		<div id="content">
+           
+		   <div id="imageDiv" align="center" style="border-bottom: 1px solid gray;">
+		    <img id="image" />
+			
+	       </div> 
+		   
+			
+			
+		</div>
+
+       
+		<aside id="sidebar">
+			<section class="widget3">
+				<h4 class="widgettitle" style="color:white">Online Learning Portal</h4> </br>
+				User: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<input type="text" name="user" placeholder="enter username"> </br></br>
+				Password: <input type="text" name="password" placeholder="enter password"> </br></br>
+				<button align="left"> login </button> <br><br>
+				<a href="#"> Forgot Password </a>
+				
+			</section>
+		</aside>
+		
+				<div id="content1">
+		<article class="post">
+				
+				
+	
+				<header>
+					<h1>
+						WELCOME
+					</h1>
+					
+				</header>
+				
+				<p><font color="blue">Rockford University was founded in 1847 as Rockford Female Seminary. It was the sister
+				college of Beloit College, which had been founded the year before. The seminary's initial 
+				campus was on the east side of the Rock River, south of downtown Rockford. <br><br> In 1890, the seminary's
+				trustees voted to offer a full college curriculum, which led to the name changing to Rockford College
+				in 1892. </font></p><br>
+				<p>Rockford University has Solutions for u </p>
+  
+<p>In January 2008, Dr. Robert L. Head was named the university's seventeenth president, effective July 2008. 
+On October 2, 2012, the board of trustees voted unanimously to take on university status. This was done to accurately
+ reflect the fact that they have many different academic departments. On July 1, 2013, the institution officially became 
+ Rockford University.[1] In February 2016, Dr. Eric W. Fulcomer was named the university's eighteenth president and the meeting is held and the university is looking
+forward to add more students in their program. </p>
+				
+			<a href="#">	<img src="info.jpg" style="height:50px;width:700px"> </img> </a>
+				
+
+			</article>
+			</div>
+			<aside id="sidebar1">
+			<section class="widget2"> 
+			<article id="post2">
+					<header>
+						<h1 class="post-title">CAMPUS STUDY</h1>
+					</header>
+					<span id="onlinecourse"><img id="campusimg" src="campus1.jpg"></span>
+					<span id="para">
+					<p class="pabout" style="margin-top:0; margin-right:8px; margin-left:3px" >
+						Leading groundbreaking own research in the field of recent
+						cardiology. Coaching a latest Division I program to the last NCAA Tournament.
+						Testings the aging for a national team cookie company. With richest academic
+						opportunities.</p>
+					</span>
+				</article> 
+				</section>
+				</aside>
+		
+		<!--
+		<aside id="sidebar">
+			<section class="widget">
+				<h3 class="widgettitle"  >Events</h3> </br> 
+				<a href="#">MST Date Sheet (September 2016)	 </a> <br> <br>
+					<a href="#">Walk-in-interview for a JRF position for DST-SERB sponsored project at SPMS	 </a> <br> <br>
+						<a href="#">6th International Conference on Soft Computing for Problem Solving (SocProS  </a><br><br>
+						<a href="#">Walk-in-interview for a JRF position for DST-SERB sponsored project at SPMS	 </a> <br> <br>
+						<a href="#">6th International Conference on Soft Computing for Problem Solving (SocProS  </a>
+			</section>
+		</aside> -->
+		<aside id="sidebar2">
+			<section class="widget4"> 
+			<article id="post2">
+					<header>
+						<h1 class="post-title">ONLINE STUDY</h1>
+					</header>
+					<span id="onlinecourse1"><img id="campusimg" src="online.jpg"></span>
+					<span id="para">
+					<p class="pabout" style="margin-top:0; margin-right:8px; margin-left:3px" >
+						We hve curated the best free online courses offered by the others reputable 
+				learning free institutions. These courses do not offer a clear path to credit,
+				but we hope you find them as useful study resource.We also identified 
+				premium of courses from Study.com .</p>
+					</span>
+				</article> 
+				</section>
+				</aside>
+				
+				<aside id="sidebar2">
+			<section class="widget2"> 
+			<article id="post2">
+					
+					<span id="onlinecourse1"><img id="lifeimg" src="secondlife.jpg"></span>
+					<span id="para">
+					<p class="pabout" style="margin-top:0; margin-right:8px; margin-left:3px; font-size: 17px;" >
+						 <br> &nbsp;&nbsp;&nbsp;Experience the new campus</p>
+					</span>
+					<br>
+					<p class="widget7"> Rockford University is a private American liberal arts college in Rockford, Illinois. It was founded in 1847 as 
+					Rockford Female Seminary and changed its name to Rockford College in 1892.</p>
+				</article> 
+				</section>
+				</aside>
+		<!--
+		<aside id="sidebar2">
+			<section class="widget1"> 
+				<h2 class="widgettitle">0nline Study</h2> </br>
+				<p>We've curated the best free online courses offered by other reputable 
+				learning institutions. These courses do not offer a clear path to credit,
+				but we hope you find them a useful study resource.We also identified 
+				premium courses from Study.com that lead to college credit.Marketing 
+				can be any way in which entrepreneurs. The courses of university are free for first week after that it is paid.</p>
+				
+			</section>
+		</aside> -->
+		
+      </div>
+	  
+	</div>
+</body>
+</html>
